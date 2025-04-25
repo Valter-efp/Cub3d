@@ -1,0 +1,73 @@
+https://www.youtube.com/watch?v=G9i78WoBBIU
+@ 1:50min
+############Vafernan############
+
+Changelog:
+
+9/03:
+{
+	adicionei as funcoes:
+	is_config_line;
+	is_empty_line;
+	map_design;
+	alterei o ft_valid_map orginal,
+	basicament o tmp_map que tinhas eliminava linhas que tivessesm chars unknown,
+	o que eu fiz foi criar outro mapa e com isso comparar o numero de linhas dos 2,
+	se for diferente da erro de unknown char.
+
+	ciei um script que te corre os mapas com valgrind, fechas um abre outro no caso dos goog
+	os bad ele fecha porque dao erro...
+	so tens de mudar a pasta para os good ou bad
+
+	removi uns wildcards do makefile
+}
+
+11/02:
+	{
+		Splited main.c, created draw.c;
+		Loading different textures based on direction;
+		Added: # define BypassParse 1
+	}
+	problem: If i look at a image sideways I can see the texture almost complete instead of overlaping
+
+12/02:
+Maybe the problem is determining the wall facing direction. its better to understand with the colored walls!
+
+14/02:
+{
+	trying to render map based on the map design and not player positionn;
+	Added new vars to the struct for map dimension;
+	Inited those values in the parsebypass;
+	
+}
+
+15/02:
+{
+    Merged with Pedro's program;
+    Implemented colision;
+    Created separated folders for stuff;
+	Added Ceelinf and floor color, but is hard coded in main;
+    Trying to fix texture overlaping / extension:
+        I think I understant the problem.
+        The further I am from the textures the more they shrink, the closer I am the more they expand.
+        How can I fix this??
+
+		problem is in:
+		int calculate_texture_x(t_game *game, int texture_index, float hit_x, float hit_y)
+		FIXED!!!
+}
+16/02:
+{
+	Debug mode is fked! (What is the problem?)
+}
+
+21/02
+{
+	Finalmente consegui meter a renderização dos lados das paredes a funcionar;
+	Tecla ESC já dá exit;
+	Organização dos ficheiros em pastas;
+	Modo debug está funcional;
+	Pastas "draw" e "palyer" estão normed!;
+	Ficam 3 conjuntos de 4 texturaas para testes.
+}
+############Pferrei############
